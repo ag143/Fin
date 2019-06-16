@@ -5,12 +5,14 @@
 
 	<h3><a href="#footer">Go to bottom</a> for Analysis Report</h3>
 	<br>
+	<input id="selection" type=text value="Result_ADANIENT.txt">
 	<button onClick=scan()>scan</button>
 	<pre id="fileDisplayArea" class="collapsible"><pre>
 	<footer id="footer"></footer>
 	<script>
 
 function scan(){
+var stockSelection = document.getElementById('selection').value
  var o = [], h = [], l = [], c=[], d=[], t=[], s=[], RSIchange = [], RSIGain = [], RSILoss = [],RSIAvgGain = [], RSIAvgLoss = [], RSIRS =  [],RSIRSI =[],RSI14DAYTRIAL = [];
  var lineoutput,  details;
 var transactions=[],transactionStart=[],transactionEnd=[],transactionID=[], TransactionProfitOrLoss=[],TotalProfitAndLoss=0,transactionIterator=0;
@@ -22,7 +24,7 @@ var isRSIchecked="false",isMACDChecked="false",isEMA1Checked="false",isEMA2Check
 var output1="";
 	
  var f = new XMLHttpRequest();
-    f.open("GET", "Result_ACCtxt.txt", false);
+    f.open("GET", stockSelection, false);
     f.onreadystatechange = function ()
     {
         if(f.readyState === 4)
@@ -276,3 +278,4 @@ function fSMA(c,y,n){
 	</script>
 </body>
 </html>
+\
