@@ -440,6 +440,8 @@ function fSMA(c,y,n){
 function selectStock()
 {
 var e= document.getElementById("stock");
+	for(i=0; i<e.options.length;i++)
+		console.log(e.options[i].value);
 document.getElementById("selection").value = document.getElementById("stock").value;
 }
 	</script>
