@@ -2,7 +2,7 @@
 <html>
 
 <body>
-<select name="stock">
+<select name="stock" onChange=selectStock()>
  <option value="Result_ACC.txt">Result_ACC.txt</option>
  <option value="Result_ADANIENT.txt">Result_ACC.txt</option>
  <option value="Result_ADANIPORTS.txt">Result_ACC.txt</option>
@@ -178,7 +178,6 @@
 	<pre id="fileDisplayArea" class="collapsible"><pre>
 	<footer id="footer"></footer>
 	<script>
-
 function scan(){
 var stockSelection = document.getElementById('selection').value
  var o = [], h = [], l = [], c=[], d=[], t=[], s=[], RSIchange = [], RSIGain = [], RSILoss = [],RSIAvgGain = [], RSIAvgLoss = [], RSIRS =  [],RSIRSI =[],RSI14DAYTRIAL = [];
@@ -219,7 +218,6 @@ var output1="";
 		    
 // 		    for (var y=0;y<s.length;y++)
 // 			  console.log("----->"+s[y]+","+d[y]+","+t[y]+","+o[y]+","+h[y]+","+l[y]+","+c[y]);
-
 		    option = "RSI";
 					nMovingAverage = 2;
 					nMovingAverage1 =12;
@@ -234,7 +232,6 @@ var output1="";
 					RSIchange[x]=0.0;
 					
 					
-
 					if(x>0)
 					RSIchange[x] = c[x]-c[x-1];
 					else
@@ -440,10 +437,12 @@ function fSMA(c,y,n){
 					}
 					return PreviousEMA;
 			}
-
+function selectStock()
+{
+document.getElementById("selection").value = document.getElementById("stock").value;
+}
 	</script>
 	<script>
 	</script>
 </body>
 </html>
-\
