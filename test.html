@@ -5,6 +5,8 @@
 <script>
 function test()
 {
+ console.log(getRootWebSitePath());
+ console.log(getBaseUrl());
  console.log(window.location.pathname);
          
 $http.get('./').success(function(response) {
