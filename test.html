@@ -1,0 +1,12 @@
+<body onLoad=test()>
+
+<script>
+function test()
+{
+$http.get('./').success(function(response) {
+    console.log(response);
+});
+}
+</script>
+<button onClick=test()>click</button>
+</body>
