@@ -110,6 +110,7 @@ function randomstock()
 var e= document.getElementById("stock");
 var randomNo = Math.floor((Math.random() * e.options.length) + 1);
 document.getElementById('selection').value = e.options[randomNo].value;
+	console.log(document.getElementById('selection').value);
 }
 function scan(){
 var stockSelection = document.getElementById('selection').value;
