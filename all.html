@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<body>
+<body onLoad=randomstock()>
 <select name="stock" id="stock" onChange=selectStock()>
  <option value="Result_ACC.txt">Result_ACC.txt</option>
  <option value="Result_ADANIENT.txt">Result_ADANIENT.txt</option>
@@ -105,8 +105,14 @@
 	<pre id="fileDisplayArea" class="collapsible"><pre>
 	<footer id="footer"></footer>
 	<script>
+function randomstock()
+{
+var e= document.getElementById("stock");
+var randomNo = Math.floor((Math.random() * e.options.length) + 1);
+document.getElementById('selection').value = e.options[randomNo].value;
+}
 function scan(){
-var stockSelection = document.getElementById('selection').value
+var stockSelection = document.getElementById('selection').value;
  var o = [], h = [], l = [], c=[], d=[], t=[], s=[], RSIchange = [], RSIGain = [], RSILoss = [],RSIAvgGain = [], RSIAvgLoss = [], RSIRS =  [],RSIRSI =[],RSI14DAYTRIAL = [];
  var lineoutput,  details;
 var transactions=[],transactionStart=[],transactionEnd=[],transactionID=[], TransactionProfitOrLoss=[],TotalProfitAndLoss=0,transactionIterator=0;
